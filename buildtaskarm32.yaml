@@ -1,11 +1,11 @@
 version: 1.0-preview
 steps:
-  - build: -t {{.Run.Registry}}/csharpmodule:0.0.1-arm32v7 -f /workspace/modules/csharpModule/Dockerfile.arm32v7 /workspace/modules/csharpModule
-  - build: -t {{.Run.Registry}}/cmodule:0.0.1-arm32v7 -f /workspace/modules/cmodule/Dockerfile.arm32v7 /workspace/modules/cmodule
-  - build: -t {{.Run.Registry}}/functionmodule:0.0.1-arm32v7 -f /workspace/modules/functionModule/Dockerfile.arm32v7 /workspace/modules/functionModule
-  - build: -t {{.Run.Registry}}/javamodule:0.0.1-arm32v7 -f /workspace/modules/javaModule/Dockerfile.arm32v7 /workspace/modules/javaModule
-  - build: -t {{.Run.Registry}}/nodemodule:0.0.1-arm32v7 -f /workspace/modules/nodeModule/Dockerfile.arm32v7 /workspace/modules/nodeModule
-  - build: -t {{.Run.Registry}}/pythonmodule:0.0.1-arm32v7 -f /workspace/modules/pythonModule/Dockerfile.arm32v7 /workspace/modules/pythonModule
+  - build: -t {{.Run.Registry}}/csharpmodule:0.0.1-arm32v7 -f /workspace/modules/csharpModule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/csharpModule
+  - build: -t {{.Run.Registry}}/cmodule:0.0.1-arm32v7 -f /workspace/modules/cmodule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/cmodule
+  - build: -t {{.Run.Registry}}/functionmodule:0.0.1-arm32v7 -f /workspace/modules/functionModule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/functionModule
+  - build: -t {{.Run.Registry}}/javamodule:0.0.1-arm32v7 -f /workspace/modules/javaModule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/javaModule
+  - build: -t {{.Run.Registry}}/nodemodule:0.0.1-arm32v7 -f /workspace/modules/nodeModule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/nodeModule
+  - build: -t {{.Run.Registry}}/pythonmodule:0.0.1-arm32v7 -f /workspace/modules/pythonModule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/pythonModule
   - push:
     - {{.Run.Registry}}/csharpmodule:0.0.1-arm32v7
     - {{.Run.Registry}}/cmodule:0.0.1-arm32v7
