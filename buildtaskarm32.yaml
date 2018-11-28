@@ -1,5 +1,5 @@
 version: 1.0-preview
-stepTimeout: 1200
+stepTimeout: 2400
 steps:
   - cmd: docker build -t {{.Run.Registry}}/javamodule:0.0.1-arm32v7 -f /workspace/modules/javaModule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/javaModule
   - cmd: docker build -t {{.Run.Registry}}/csharpmodule:0.0.1-arm32v7 -f /workspace/modules/csharpModule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/csharpModule
