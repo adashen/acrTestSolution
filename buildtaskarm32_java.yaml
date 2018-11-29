@@ -1,0 +1,6 @@
+version: 1.0-preview
+stepTimeout: 4800
+steps:
+  - cmd: docker build -t {{.Run.Registry}}/javamodule:0.0.1-arm32v7 -f /workspace/modules/javaModule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/javaModule
+  - push:
+    - {{.Run.Registry}}/javamodule:0.0.1-arm32v7

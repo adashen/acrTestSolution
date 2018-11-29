@@ -1,0 +1,7 @@
+version: 1.0-preview
+stepTimeout: 4800
+steps:
+  - cmd: docker build -t {{.Run.Registry}}/functionmodule:0.0.1-arm32v7 -f /workspace/modules/functionModule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/functionModule
+  - push:
+    - {{.Run.Registry}}/functionmodule:0.0.1-arm32v7
+
