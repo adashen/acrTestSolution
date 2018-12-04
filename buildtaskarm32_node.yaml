@@ -1,7 +1,7 @@
 version: 1.0-preview
 stepTimeout: 4800
 steps:
-  - cmd: docker build -t {{.Run.Registry}}/nodemodule:0.0.1-arm32v7 -f /workspace/modules/nodeModule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/nodeModule
+  - build: -t {{.Run.Registry}}/nodemodule:0.0.1-arm32v7 -f /workspace/modules/nodeModule/Dockerfile.arm32v7 --platform linux/arm/v7 /workspace/modules/nodeModule
   - push:
     - {{.Run.Registry}}/nodemodule:0.0.1-arm32v7
 
